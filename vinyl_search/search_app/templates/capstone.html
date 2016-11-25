@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+    {% load static %}
+    <title>Record Search</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/capstone.css' %}">
+
+    </head>
+
+    <body class='container'>
+
+        <header>
+            <h1>Vinyl Search</h1>
+        </header>
+        <main>
+            <h3>Upload a photo of the album cover you want to search for.</h3><br>
+            <form action="/file-upload" class="dropzone" id="my-awesome-dropzone">
+                <div class="fallback">
+                    <input name="file" type="file" multiple />
+                </div>
+
+            </form>
+
+        </main>
+        <footer></footer>
+        <!--<script>google search bar
+          (function() {
+            var cx = '010054970604405248646:o6p7xnc0ubm';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+          })();
+        </script>-->
+        <!--<gcse:search></gcse:search>-->
+
+        <script src="/static/js/dropzone.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="/static/js/capstone.js"></script>
+        <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script><!--jquery ui cdn-->
+    </body>
+
+</html>

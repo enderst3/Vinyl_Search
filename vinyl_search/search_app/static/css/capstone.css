@@ -1,0 +1,87 @@
+.container {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: center;
+    background-image: url('/static/images/background_image.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header, main, footer {
+    background-color: rgba(175, 175, 175, 0.4);
+    margin: 10px;
+    border-color: dodgerblue;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+    color: dodgerblue;
+    opacity: 0.7;
+}
+
+ header {
+    order: 1;
+    width: 70%;
+    height: 150px;
+    text-align: center;
+}
+
+header > h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: monospace;
+    font-size: 66px;
+    padding-top: 12px;
+}
+
+ main {
+    z-index: 999;
+    order: 2;
+    width: 70%;
+    height: 650px;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: monospace;
+    font-size: 18px;
+
+}
+
+main > h3 {
+    text-align: center;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: monospace;
+    font-size: 26px;
+    padding: 8px;
+}
+
+.dropzone {
+    width: 60%;
+    height: 55%;
+    border: 2px dashed dodgerblue;
+    border-radius: 8px;
+    margin: auto;
+    text-align: center;
+}
+
+.dropzone > h5 {
+    font-family: monospace;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    padding-top: 15px;
+
+}
+
+ footer {
+    order: 3;
+    width: 70%;
+    height: 150px;
+}
