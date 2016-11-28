@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from search_app.views import capstone
+from search_app.views import capstone, upload_image
 
 
 # django admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    # start_app
+    # search_app
     url(r'^$', capstone),
+    url(r'^query_upload/$', upload_image, name='query_upload'),
 ]
