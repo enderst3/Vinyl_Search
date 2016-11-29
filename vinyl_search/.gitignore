@@ -1,0 +1,4 @@
+secrets.py
+private
+*.pyc
+.DS_Store

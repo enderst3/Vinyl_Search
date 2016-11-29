@@ -1,10 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from search_app.models import VinylQuery
-from django.template import RequestContext as ctx
 from .forms import VinylQueryForm
 from .models import VinylQuery
-# Create your views here.
+from private.secrets import client_id, client_secret
+from imgurpython import ImgurClient
+
+
+album = None
+client = ImgurClient(client_id, client_secret)
+
 def capstone(request):
     return render(request, "capstone.html")
 
@@ -12,15 +17,14 @@ def capstone(request):
 def upload_image(request):
 
     if request.method == 'POST':
-        #form = VinylQueryForm(request.POST, request.FILES)
         form = VinylQuery()
         form.query_image = request.FILES['file']
         form.save()
-
-        #if form.is_valid():
-            #image = form.save()
+        #import pdb; pdb.set_trace()
+        image = client.upload_from_path(form.query_image.path, anon=False)
+        import pdb; pdb.set_trace()
 
     else:
         form = VinylQueryForm()
+
     return HttpResponseRedirect("/")
-    #return render('query_upload.html', locals(), ctx(request))

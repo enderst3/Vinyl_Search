@@ -48,7 +48,6 @@ header > h1 {
     text-overflow: ellipsis;
     font-family: monospace;
     font-size: 18px;
-
 }
 
 main > h3 {
@@ -61,6 +60,9 @@ main > h3 {
     padding: 8px;
 }
 
+#choose_img {
+  font-size: 20px;
+}
 .dropzone {
     width: 60%;
     height: 55%;
@@ -77,7 +79,6 @@ main > h3 {
     text-overflow: ellipsis;
     font-size: 20px;
     padding-top: 15px;
-
 }
 
  footer {

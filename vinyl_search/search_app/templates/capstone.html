@@ -17,16 +17,17 @@
             <form action="{% url 'query_upload' %}" class="dropzone" id="myDropzone" enctype="multipart/form-data" method="POST">
               {% csrf_token %}
                 <div class="fallback">
-                    <input name="file" type="file"/>
+                    <input name="file" type="file" id='choose_img' value="Choose Image"/> 
                 </div>
+                <br>
                 <input type='submit' id="submit" value="Upload Image">
             </form>
 
         </main>
         <footer></footer>
 
-        <!-- <script src="/static/js/dropzone.js"></script>
-        <script type='text/javascript'>
+        <!--<script src="/static/js/dropzone.js"></script>-->
+        <!--<script type='text/javascript'>
         Dropzone.options.myDropzone = {
 
               // Prevents Dropzone from uploading dropped files immediately
