@@ -14,10 +14,10 @@
         </header>
         <main>
             <h3>Upload a photo of the album cover you want to search for.</h3><br>
-            <form action="{% url 'query_upload' %}" class="dropzone" id="myDropzone" enctype="multipart/form-data" method="POST">
+            <form action="{% url 'app' %}" class="dropzone" id="myDropzone" enctype="multipart/form-data" method="POST">
               {% csrf_token %}
                 <div class="fallback">
-                    <input name="file" type="file" id='choose_img' value="Choose Image"/> 
+                    <input name="file" type="file" id='choose_img' value="Choose Image"/>
                 </div>
                 <br>
                 <input type='submit' id="submit" value="Upload Image">

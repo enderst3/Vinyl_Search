@@ -5,26 +5,28 @@ from .forms import VinylQueryForm
 from .models import VinylQuery
 from private.secrets import client_id, client_secret
 from imgurpython import ImgurClient
+from django.contrib.auth.decorators import login_required
 
 
-album = None
-client = ImgurClient(client_id, client_secret)
+@login_required
+def app(request):
 
-def capstone(request):
-    return render(request, "capstone.html")
-
-
-def upload_image(request):
+    album = None
+    client = ImgurClient(client_id, client_secret)
 
     if request.method == 'POST':
-        form = VinylQuery()
-        form.query_image = request.FILES['file']
-        form.save()
-        #import pdb; pdb.set_trace()
-        image = client.upload_from_path(form.query_image.path, anon=False)
-        import pdb; pdb.set_trace()
+        upload = request.FILES['file']
+        # import pdb; pdb.set_trace()
+        vq = VinylQuery.objects.create(user=request.user, query_image=upload)
+        vq.save()
+        image = client.upload_from_path(vq.query_image.path, anon=False)
+        vq.imgur_url = image.get('link', None)
+        vq.save()
+        # import pdb; pdb.set_trace()
 
-    else:
+    elif request.method == 'GET':
         form = VinylQueryForm()
 
-    return HttpResponseRedirect("/")
+    context = {}
+
+    return render(request, 'capstone.html', context)

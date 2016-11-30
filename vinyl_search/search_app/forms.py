@@ -6,4 +6,4 @@ class VinylQueryForm(forms.ModelForm):
 
     class Meta:
         model = VinylQuery
-        fields = ('query_image', )
+        fields = ('query_image', 'imgur_url')
