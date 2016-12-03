@@ -17,12 +17,24 @@
             <form action="{% url 'app' %}" class="dropzone" id="myDropzone" enctype="multipart/form-data" method="POST">
               {% csrf_token %}
                 <div class="fallback">
-                    <input name="file" type="file" id='choose_img' value="Choose Image"/>
+                    <input name="file" type="file" style='display:none' id='choose_img' value="Choose Image"/>
+                    <br>
+                    <label for="choose_img">Choose an Image</label>
                 </div>
                 <br>
                 <input type='submit' id="submit" value="Upload Image">
             </form>
-
+            <br>
+<!--            <img scr="https://api-img.discogs.com/i7HOeCU0Rk6mjSyRyu5w_zMwJ6I=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-227476-1423961999-8240.jpeg.jpg">-->
+<!--            {{results}}-->
+            {% for r in results %}
+             <img src="{{ r.thumb }}" />
+            {{ r.uri }}
+            {{ r.title }}
+            {{ r.format }}
+            {{ r.community }}
+            {% endfor %}
+            
         </main>
         <footer></footer>
 

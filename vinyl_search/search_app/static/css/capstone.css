@@ -47,7 +47,8 @@ header > h1 {
     overflow: hidden;
     text-overflow: ellipsis;
     font-family: monospace;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: lighter;
 }
 
 main > h3 {
@@ -56,29 +57,36 @@ main > h3 {
     overflow: hidden;
     text-overflow: ellipsis;
     font-family: monospace;
-    font-size: 26px;
+    font-size: 28px;
     padding: 8px;
 }
 
-#choose_img {
-  font-size: 20px;
+label {
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid dodgerblue;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: monospace;
+    font-weight: lighter;
 }
+
+#submit {
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid dodgerblue;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: monospace;
+}
+
 .dropzone {
     width: 60%;
-    height: 55%;
+    height: 23%;
     border: 2px dashed dodgerblue;
     border-radius: 8px;
     margin: auto;
     text-align: center;
-}
-
-.dropzone > h5 {
-    font-family: monospace;
-    white-space: wrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 20px;
-    padding-top: 15px;
 }
 
  footer {
