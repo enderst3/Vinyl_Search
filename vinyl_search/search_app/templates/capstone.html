@@ -18,26 +18,43 @@
             <form action="{% url 'app' %}" class="dropzone" id="myDropzone" enctype="multipart/form-data" method="POST">
               {% csrf_token %}
                 <div class="fallback">
-                    <input name="file" type="file" style='display:none' id='choose_img' value="Choose Image"/>
+                    <input name="file" type="file" style='display:none' id='choose_img' value="Choose Image" accept="image/*" capture="camera"/>
                     <br>
-                    <label for="choose_img">Choose an Image</label>
+                    <label for="choose_img" id='choose_lable'>Choose an Image</label>
                 </div>
                 <br>
-                <input type='submit' id="submit" value="Upload Image">
+                <input type='submit' id="submit" style='display:none'>
+                <label for="submit" id='submit_lable'>Search for Image</label>
             </form>
             <br>
+            <div id='info_box'>
+                {% for r in results %}
+                <a href='https://www.discogs.com{{ r.uri }}' title="{{ r.title }},format: {{ r.format.0 }}, {{ r.format.1 }} want:{{r.community.want }} have: {{ r.community.have }}">
+                 <img src="{{ r.thumb }}"/>
+                </a>
+                <div id='title'>{{ r.title }}</div>
+                <div id='format'>
+                    {% if r.format.0|length == 0%}
+                        Band Page 
+                    {% else %}
+                        format: {{ r.format.0 }}, {{ r.format.1 }}, 
+                        {{ r.format.2 }}
+                        <div id="community">Discogs Community:</div>
+                        <div id='wanthave'>want: {{ r.community.want }} have: 
+                    {{ r.community.have }}</div>
+                    {% endif %}
 
-            {% for r in results %}
-            
-            <a href='https://www.discogs.com{{ r.uri }}' title="{{ r.title }}, format: {{ r.format.0 }}, {{ r.format.1 }} want: {{ r.community.want }} have: {{ r.community.have }}">
-             <img src="{{ r.thumb }}"/>
-            </a>
-            
-            {% endfor %}
-            
+                </div>
+                <br>
+                {% endfor %}
+            </div>
+            <div id='wait'></div>
+            <h3>Click on album cover to go to Discogs.</h3>
         </main>
         <footer>
-            <h3>Click on album cover to go to Discogs.</h3>
+            <p>Created by: Todd Enders</p>
+            <p>Contact information: <a href="enderst3@gmail.com">
+                enderst3@gmail.com</a></p>
         </footer>
 
         <!--<script src="/static/js/dropzone.js"></script>-->

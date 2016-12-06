@@ -13,6 +13,7 @@ from .models import VinylQuery
 from private.secrets import client_id, client_secret, discogs_key
 from imgurpython import ImgurClient
 from django.contrib.auth.decorators import login_required
+#from collection.forms import ContactForm
 
 import requests
 import discogs_client
@@ -30,9 +31,7 @@ def app(request):
         image = client.upload_from_path(vq.query_image.path, anon=False)
         vq.imgur_url = image.get('link', None)
         vq.save()
-        
         driver = webdriver.Firefox()
-#        driver.set_window_size(1024, 768)
         driver.get('https://images.google.com/')
         image_url_field = driver.find_element_by_name('q')
         image_url_field.send_keys(vq.imgur_url)
@@ -43,7 +42,6 @@ def app(request):
         best_guess = driver.find_element_by_class_name('_gUb').text
         d = discogs_client.Client('vinyl_search/0.1', user_token=discogs_key)
         results = d.search(best_guess)
-
         sm_results = list()
 
         for index, result in enumerate(results):
@@ -64,4 +62,11 @@ def app(request):
 
     return render(request, 'capstone.html', context)
 
+
+def contact(request):
+    form_class = ContactForm
+    
+    return render(request, 'contact.html', {
+        'form': form_class,
+    })
 
