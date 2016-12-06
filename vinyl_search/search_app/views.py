@@ -13,6 +13,7 @@ from .models import VinylQuery
 from private.secrets import client_id, client_secret, discogs_key
 from imgurpython import ImgurClient
 from django.contrib.auth.decorators import login_required
+
 import requests
 import discogs_client
 
@@ -29,17 +30,17 @@ def app(request):
         image = client.upload_from_path(vq.query_image.path, anon=False)
         vq.imgur_url = image.get('link', None)
         vq.save()
-        browser = webdriver.Firefox()
-        browser.get('https://images.google.com/')
-        image_url_field = browser.find_element_by_name('q')
+        
+        driver = webdriver.Firefox()
+#        driver.set_window_size(1024, 768)
+        driver.get('https://images.google.com/')
+        image_url_field = driver.find_element_by_name('q')
         image_url_field.send_keys(vq.imgur_url)
         image_url_field.submit()
         time.sleep(1)
-        browser.find_element_by_xpath("//a[contains(., 'search by')]").click()
+        driver.find_element_by_xpath("//a[contains(., 'search by')]").click()
         time.sleep(4)
-        best_guess = browser.find_element_by_class_name('_gUb').text
-        #print(best_guess)
-#        import ipdb; ipdb.set_trace()
+        best_guess = driver.find_element_by_class_name('_gUb').text
         d = discogs_client.Client('vinyl_search/0.1', user_token=discogs_key)
         results = d.search(best_guess)
 
