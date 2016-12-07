@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Contact - {{ block.super }}{% endblock %}
+
+{% block content %}
+<h1>Contact Me</h1>
+<form id='contact_forms' role="form" action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" id="contact" style='display:none'></button>
+    <label for="contact" id='contact'>Submit Form</label>
+    <br>
+    <br>
+    <a id='home' href="http://127.0.0.1:8000">Take Me Home</a>
+</form>
+{% endblock %}

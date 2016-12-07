@@ -25,8 +25,8 @@ header, main, footer {
  header {
     order: 1;
     width: 80%;
-    display:block;
-    overflow:auto;
+    display: block;
+    overflow: auto;
     text-align: center;
 }
 
@@ -42,8 +42,8 @@ header > h1 {
     z-index: 999;
     order: 2;
     width: 80%;
-    display:block;
-    overflow:auto;
+    display: block;
+    overflow: auto;
     white-space: wrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -51,7 +51,6 @@ header > h1 {
     font-size: 16px;
     font-weight: lighter;
     text-align: center;
-    padding: 10px;
 }
 
 main > h3 {
@@ -61,14 +60,13 @@ main > h3 {
     text-overflow: ellipsis;
     font-family: monospace;
     font-size: 24px;
-    padding: 8px;
 }
 
 a {
     padding: 5px;
 }
 
-label {
+#choose_label, #submit_label, #contact {
     padding: 5px;
     background-color: rgba(255, 255, 255, 0.1);
     border: 2px solid dodgerblue;
@@ -76,16 +74,23 @@ label {
     cursor: pointer;
     font-family: monospace;
     font-weight: lighter;
+    color: dodgerblue;
 }
 
-label:hover {
+#choose_label:hover {
     background-color: rgba(0, 0, 0, 0.2)
 }
-.dropzone {
-    width: 60%;
-    height: 23%;
-    margin: auto;
-    text-align: center;
+
+#submit_label:hover {
+    background-color: rgba(0, 0, 0, 0.2)
+}
+
+#contact:hover {
+    background-color: rgba(0, 0, 0, 0.2)
+}
+
+#contact_me {
+    font-size: 16px;
 }
 
 p {
@@ -99,8 +104,8 @@ p {
  footer {
     order: 3;
     width: 80%;
-    display:block;
-    overflow:auto;
+    display: block;
+    overflow: auto;
     text-align: center;
     white-space: wrap;
     overflow: hidden;

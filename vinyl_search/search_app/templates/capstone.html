@@ -1,94 +1,56 @@
-<!doctype html>
-<html>
-    <head>
-    {% load static %}
-    <title>Record Search</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/capstone.css' %}">
+{% extends 'base.html' %}
 
-    </head>
 
-    <body class='container'>
+{% block content %}
+<h3>Upload a photo of the album cover you want to search for.</h3>
 
-        <header>
-            <h1>Vinyl Search</h1>
-        </header>
-        <main>
-            <h3>Upload a photo of the album cover you want to search for.</h3>
+<form action="{% url 'app' %}" class="dropzone" id="myDropzone" enctype="multipart/form-data" method="POST">
+    
+  {% csrf_token %}
+    
+    <div class="fallback">
+        
+        <input name="file" type="file" style='display:none' id='choose_img' value="Choose Image" accept="image/*" capture="camera"/>
+        <br>
+        <label for="choose_img" id='choose_label'>Choose an Image</label>
+        
+    </div>
+    <br>
+    <input type='submit' id="submit" style='display:none'>
+    <label for="submit" id='submit_label'>Search for Image</label>
+</form>
 
-            <form action="{% url 'app' %}" class="dropzone" id="myDropzone" enctype="multipart/form-data" method="POST">
-              {% csrf_token %}
-                <div class="fallback">
-                    <input name="file" type="file" style='display:none' id='choose_img' value="Choose Image" accept="image/*" capture="camera"/>
-                    <br>
-                    <label for="choose_img" id='choose_lable'>Choose an Image</label>
-                </div>
-                <br>
-                <input type='submit' id="submit" style='display:none'>
-                <label for="submit" id='submit_lable'>Search for Image</label>
-            </form>
-            <br>
-            <div id='info_box'>
-                {% for r in results %}
-                <a href='https://www.discogs.com{{ r.uri }}' title="{{ r.title }},format: {{ r.format.0 }}, {{ r.format.1 }} want:{{r.community.want }} have: {{ r.community.have }}">
-                 <img src="{{ r.thumb }}"/>
-                </a>
-                <div id='title'>{{ r.title }}</div>
-                <div id='format'>
-                    {% if r.format.0|length == 0%}
-                        Band Page 
-                    {% else %}
-                        format: {{ r.format.0 }}, {{ r.format.1 }}, 
-                        {{ r.format.2 }}
-                        <div id="community">Discogs Community:</div>
-                        <div id='wanthave'>want: {{ r.community.want }} have: 
-                    {{ r.community.have }}</div>
-                    {% endif %}
+<div id='info_box'>
+    
+    {% for r in results %}
+    
+    <a href='https://www.discogs.com{{ r.uri }}' title="{{ r.title }},format: {{ r.format.0 }}, {{ r.format.1 }} want:{{r.community.want }} have: {{ r.community.have }}">
+     <img src="{{ r.thumb }}"/>
+    </a>
+    
+    <div id='title'>{{ r.title }}</div>
+    
+    <div id='format'>
+        
+        {% if r.format.0|length == 0%}
+            Band Page 
+        {% else %}
+            format: {{ r.format.0 }}, {{ r.format.1 }}, 
+            {{ r.format.2 }}
+            <div id="community">Discogs Community:</div>
+            <div id='wanthave'>want: {{ r.community.want }} have: 
+        {{ r.community.have }}</div>
+        {% endif %}
 
-                </div>
-                <br>
-                {% endfor %}
-            </div>
-            <div id='wait'></div>
-            <h3>Click on album cover to go to Discogs.</h3>
-        </main>
-        <footer>
-            <p>Created by: Todd Enders</p>
-            <p>Contact information: <a href="enderst3@gmail.com">
-                enderst3@gmail.com</a></p>
-        </footer>
+    </div>
+    
+    {% endfor %}
+    
+</div>
 
-        <!--<script src="/static/js/dropzone.js"></script>-->
-        <!--<script type='text/javascript'>
-        Dropzone.options.myDropzone = {
+<div id='wait'></div>
 
-              // Prevents Dropzone from uploading dropped files immediately
-              autoProcessQueue : false,
+<h3>Click on album cover to go to Discogs.</h3>
 
-              init : function() {
-                  var submitButton = document.querySelector("#submit");
-                  myDropzone = this;
-
-                  submitButton.addEventListener("click", function() {
-                      myDropzone.processQueue();
-                      // Tell Dropzone to process all queued files.
-                  });
-
-                  // You might want to show the submit button only when
-                  // files are dropped here:
-                  this.on("addedfile", function() {
-                      // Show submit button here and/or inform user to click it.
-                  });
-
-              }
-          };
-        </script> -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="/static/js/capstone.js"></script>
-        <script
-        src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous"></script><!--jquery ui cdn-->
-    </body>
-
-</html>
+{%  endblock content %}
+      
