@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <h2>Login</h2>
+
+    <section id=errors>
+     {{ form.errors }}
+    </section>
+
+    <form action='' method='POST'>
+     {% csrf_token %}
+     {{ form.as_p }}
+     <br>    
+     <input type='submit'>
+     <br>    
+     <br>
+    </form>
+
+{% endblock %}  

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+     <p>Sign Up!</p>
+
+       <section id=errors>
+         {{ user_form.errors }}
+        
+       </section>
+
+       <form action='' method='POST'>
+         {% csrf_token %}
+
+         {{ user_form.as_p }}
+        
+         Agree? <input type='checkbox' required='true'>
+         <input type='submit'>
+       </form>
+
+{% endblock %}
