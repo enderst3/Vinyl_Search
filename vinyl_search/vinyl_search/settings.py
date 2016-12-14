@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'search_app',
     'private',
     'imgurpython',
-    'bootstrap3',
 ]
 
 MIDDLEWARE = [

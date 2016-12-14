@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Search History</h1>
+
+{% for search in results %}
+
+    {{ search.result_title }}
+    <img src="{{search.query_image.url}}">
+    <br>
+
+{% endfor %}
+{% endblock %}

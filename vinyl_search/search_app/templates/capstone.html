@@ -10,10 +10,10 @@
     
     <div class="fallback">
         
-        <input name="file" type="file" style='display:none' id='choose_img' value="Choose Image" accept="image/*" capture="camera"/>
+        <input name="file" type="file" style='display:none' id='choose_img' value="Choose Image" accept="image/*" capture="camera" onchange="loadFile(event)"/>
         <br>
-        <label for="choose_img" id='choose_label'>Choose an Image</label>
-        
+        <label for="choose_img" id='choose_label'>Choose an Image</label><br>
+        <img id="image" height='128'/>
     </div>
     <br>
     <input type='submit' id="submit" style='display:none'>
@@ -25,18 +25,20 @@
 <div id='info_box'>
     
     {% for r in results %}
-    
+    <!--puts the image on the page with pop up-->
     <a href='https://www.discogs.com{{ r.uri }}' title="{{ r.title }},format: {{ r.format.0 }}, {{ r.format.1 }} want:{{r.community.want }} have: {{ r.community.have }}">
      <img src="{{ r.thumb }}"/>
     </a>
     
+    <!--album title-->
     <div id='title'>{{ r.title }}</div>
     
     <div id='format'>
-        
-        {% if r.format.0|length == 0%}
+        <!--if there is no album-->
+        {% if r.format.0|length == 0 %}
             Band Page 
         {% else %}
+        <!--if there is an album-->
             format: {{ r.format.0 }}, {{ r.format.1 }}, 
             {{ r.format.2 }}
             <div id="community">Discogs Community:</div>

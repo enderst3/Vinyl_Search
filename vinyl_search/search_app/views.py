@@ -36,20 +36,31 @@ def app(request):
         vq.imgur_url = image.get('link', None)
         vq.save()
         
-        # selenium web driver
+        # selenium web driver, opens firefox
         driver = webdriver.Firefox()
+        # goes to google
         driver.get('https://images.google.com/')
+        #finds the input field
         image_url_field = driver.find_element_by_name('q')
+        #populates the image url
         image_url_field.send_keys(vq.imgur_url)
+        # clicks submit
         image_url_field.submit()
+        # waits 1 second
         time.sleep(1)
+        # finds search by image link, then clicks
         driver.find_element_by_xpath("//a[contains(., 'search by')]").click()
+        # waits 4 seconds
         time.sleep(4)
+        # finds the best guess and copies the info
         best_guess = driver.find_element_by_class_name('_gUb').text
+        # discogs keys and api call
         d = discogs_client.Client('vinyl_search/0.1', user_token=discogs_key)
+        # getting the results
         results = d.search(best_guess)
+        
         sm_results = list()
-
+        # finds the first 5 results
         for index, result in enumerate(results):
 
             if index >= 5:
@@ -57,14 +68,26 @@ def app(request):
 
             thumb_link = result.data
             sm_results.append(thumb_link)
+            
+        r = sm_results[0]
+        vq.result_title = r['title']
+        #vq.result_thumb = r['format']
+        vq.result_format = r['thumb']
+        vq.save()
 
     elif request.method == 'GET':
         form = VinylQueryForm()
         sm_results = list()
-
+    #import ipdb; ipdb.set_trace()
     context = {'results': sm_results}
 
     return render(request, 'capstone.html', context)
+
+
+def user_history(request):
+    vq = VinylQuery.objects.filter(user=request.user)
+    context = {'results': vq}
+    return render(request, 'user_history.html', context)
 
 
 # contact and email info

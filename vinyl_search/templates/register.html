@@ -12,13 +12,21 @@
 
        <form action='' method='POST'>
          {% csrf_token %}
-
-         {{ user_form.as_p }}
-        
+         Username:
+         {{ user_form.username }}<br>
+         <br>
+         Password:
+         {{ user_form.password1 }}<br>
+         <br>
+         Confirm Password:
+         {{ user_form.password2 }}
+         <br>
+         <br>
          Agree with our terms?<br> <input type='checkbox' required='true'>
          <br>
          <br>
-         <input type='submit'>
+         <input type='submit' id="register" style='display:none'>
+         <label for="register" id='register_label'>Sign Me Up!</label>
          <br>
          <br>
        </form>

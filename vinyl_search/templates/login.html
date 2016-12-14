@@ -13,7 +13,8 @@
      {% csrf_token %}
      {{ form.as_p }}
      <br>    
-     <input type='submit'>
+     <input type='submit', id="login" style="display:none" >
+     <label for="login" id='login_label'>Log Me In!</label>
      <br>    
      <br>
     </form>
