@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'search_app',
     'private',
     'imgurpython',
+    'rest_framework',
+    'search_app',
 ]
 
 MIDDLEWARE = [

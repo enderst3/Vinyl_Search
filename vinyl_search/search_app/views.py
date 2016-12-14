@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from search_app.models import VinylQuery
 from .forms import VinylQueryForm
 from .models import VinylQuery
@@ -20,7 +20,12 @@ from django.template import Context
 from django.template.loader import get_template
 import requests
 import discogs_client
-
+from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
+from search_app.models import VinylQuery
+from search_app.serializers import VinylQuerySerializer
+#from rest_framework.response import JSONResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # search code
 @login_required
@@ -83,7 +88,7 @@ def app(request):
 
     return render(request, 'capstone.html', context)
 
-
+#user history
 def user_history(request):
     vq = VinylQuery.objects.filter(user=request.user)
     context = {'results': vq}
@@ -117,3 +122,60 @@ def contact(request):
 
     return render(request, 'contact.html', {'form': form_class})
 
+# rest framework
+class JSONResponse(HttpResponse):
+    """
+    An HttpResponse that renders its content into JSON.
+    """
+    def __init__(self, data, **kwargs):
+        content = JSONRenderer().render(data)
+        kwargs['content_type'] = 'application/json'
+        super(JSONResponse, self).__init__(content, **kwargs)
+
+        
+@csrf_exempt
+def search_app_list(request):
+    """
+    List all code snippets, or create a new snippet.
+    """
+    if request.method == 'GET':
+        vqs = VinylQuery.objects.all()
+        serializer = VinylQuerySerializer(vqs, many=True)
+        return JSONResponse(serializer.data)
+
+    elif request.method == 'POST':
+        data = JSONParser().parse(request)
+        serializer = VinylQuerySerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JSONResponse(serializer.data, status=201)
+        return JSONResponse(serializer.errors, status=400)
+        
+        
+@csrf_exempt
+def query_detail(request, pk):
+    """
+    Retrieve, update or delete a code snippet.
+    """
+    try:
+        query = VinylQuery.objects.get(pk=pk)
+    except VinylQuery.DoesNotExist:
+        return HttpResponse(status=404)
+
+    if request.method == 'GET':
+        serializer = VinylQuerySerializer(query)
+        return JSONResponse(serializer.data)
+
+    elif request.method == 'PUT':
+        data = JSONParser().parse(request)
+        serializer = VinylQuerySerializer(query, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JSONResponse(serializer.data)
+        return JSONResponse(serializer.errors, status=400)
+
+    elif request.method == 'DELETE':
+        query.delete()
+        return HttpResponse(status=204)   
+        
+        

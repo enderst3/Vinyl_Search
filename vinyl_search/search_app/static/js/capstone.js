@@ -19,7 +19,8 @@ $(document).ready(function(){
     clear();
     
     function add_image() {
-
+            
+        // get image when choosen by user
         document.getElementById("choose_img").onchange = function () {
              var reader = new FileReader();
 

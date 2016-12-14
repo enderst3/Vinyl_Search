@@ -19,4 +19,7 @@ urlpatterns = [
     url(r'^accounts/login/$', login),
     url(r'^accounts/logout/$', logout, {'next_page': '/'}),
     
+    # rest api
+    url(r'^api/queries/$', views.search_app_list),
+    url(r'^api/queries/(?P<pk>[0-9]+)/$', views.query_detail),  
 ]

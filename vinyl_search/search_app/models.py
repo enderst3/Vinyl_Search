@@ -14,7 +14,7 @@ class VinylQuery(models.Model):
 
     def __str__(self):
         result = self.imgur_url
-        # if statement so I can delete queries in admin
+        # if statement so I can delete queries with no image in admin
         if result == None:
             return ''
         
@@ -24,3 +24,5 @@ class VinylQuery(models.Model):
     def __repr__(self):
         result = self.imgur_url
         return result
+
+    

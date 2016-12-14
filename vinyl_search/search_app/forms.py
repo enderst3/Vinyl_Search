@@ -1,5 +1,5 @@
 from django import forms
-from .models import VinylQuery
+from search_app.models import VinylQuery
 from django import forms
 
 
