@@ -24,7 +24,6 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from search_app.models import VinylQuery
 from search_app.serializers import VinylQuerySerializer
-#from rest_framework.response import JSONResponse
 from django.views.decorators.csrf import csrf_exempt
 
 # search code
@@ -52,11 +51,11 @@ def app(request):
         # clicks submit
         image_url_field.submit()
         # waits 1 second
-        time.sleep(1)
+        time.sleep(2)
         # finds search by image link, then clicks
         driver.find_element_by_xpath("//a[contains(., 'search by')]").click()
         # waits 4 seconds
-        time.sleep(4)
+        time.sleep(5)
         # finds the best guess and copies the info
         best_guess = driver.find_element_by_class_name('_gUb').text
         # discogs keys and api call
