@@ -1216,3 +1216,18 @@ JavaScript warning: https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js, 
 [warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
 1481830485525	Marionette	INFO	Listening on port 61200
 [warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+1481850588579	geckodriver	INFO	Listening on 127.0.0.1:62177
+1481850589537	mozprofile::profile	INFO	Using profile path /var/folders/fy/hzydthbx6k53tvbyj_6y609w0000gn/T/rust_mozprofile.5tDLRMhK65OP
+1481850589539	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1481850589543	geckodriver::marionette	INFO	Connecting to Marionette on localhost:62183
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+1481850590020	Marionette	INFO	Listening on port 62183
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+JavaScript error: chrome://browser/content/places/browserPlacesViews.js, line 263: TypeError: this.controller is undefined
+1481851745592	geckodriver	INFO	Listening on 127.0.0.1:62281
+1481851746554	mozprofile::profile	INFO	Using profile path /var/folders/fy/hzydthbx6k53tvbyj_6y609w0000gn/T/rust_mozprofile.DQm2PyJJLUoj
+1481851746556	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1481851746561	geckodriver::marionette	INFO	Connecting to Marionette on localhost:62287
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+1481851747035	Marionette	INFO	Listening on port 62287
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0

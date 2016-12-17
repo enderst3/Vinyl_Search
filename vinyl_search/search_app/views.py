@@ -26,6 +26,7 @@ from search_app.models import VinylQuery
 from search_app.serializers import VinylQuerySerializer
 from django.views.decorators.csrf import csrf_exempt
 
+
 # search code
 @login_required
 def app(request):
@@ -39,14 +40,14 @@ def app(request):
         image = client.upload_from_path(vq.query_image.path, anon=False)
         vq.imgur_url = image.get('link', None)
         vq.save()
-        
+
         # selenium web driver, opens firefox
         driver = webdriver.Firefox()
         # goes to google
         driver.get('https://images.google.com/')
-        #finds the input field
+        # finds the input field
         image_url_field = driver.find_element_by_name('q')
-        #populates the image url
+        # populates the image url
         image_url_field.send_keys(vq.imgur_url)
         # clicks submit
         image_url_field.submit()
@@ -62,7 +63,6 @@ def app(request):
         d = discogs_client.Client('vinyl_search/0.1', user_token=discogs_key)
         # getting the results
         results = d.search(best_guess)
-        
         sm_results = list()
         # finds the first 5 results
         for index, result in enumerate(results):
@@ -72,22 +72,23 @@ def app(request):
 
             thumb_link = result.data
             sm_results.append(thumb_link)
-            
+
         r = sm_results[0]
         vq.result_title = r['title']
-        #vq.result_thumb = r['format']
+        # vq.result_thumb = r['format']
         vq.result_format = r['thumb']
         vq.save()
 
     elif request.method == 'GET':
         form = VinylQueryForm()
         sm_results = list()
-    #import ipdb; ipdb.set_trace()
+    # import ipdb; ipdb.set_trace()
     context = {'results': sm_results}
 
     return render(request, 'capstone.html', context)
 
-#user history
+
+# user history
 def user_history(request):
     vq = VinylQuery.objects.filter(user=request.user)
     context = {'results': vq}
@@ -115,11 +116,12 @@ def contact(request):
             email = EmailMessage("New contact form submission",
                 content,"Vinyl Search" +'',['enderst3@gmail.com'],
                 headers = {'Reply-To': contact_email})
-            
+
             email.send()
             return redirect('contact')
 
     return render(request, 'contact.html', {'form': form_class})
+
 
 # rest framework
 class JSONResponse(HttpResponse):
@@ -131,7 +133,7 @@ class JSONResponse(HttpResponse):
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
 
-        
+
 @csrf_exempt
 def search_app_list(request):
     """
@@ -149,8 +151,8 @@ def search_app_list(request):
             serializer.save()
             return JSONResponse(serializer.data, status=201)
         return JSONResponse(serializer.errors, status=400)
-        
-        
+
+
 @csrf_exempt
 def query_detail(request, pk):
     """
@@ -175,6 +177,4 @@ def query_detail(request, pk):
 
     elif request.method == 'DELETE':
         query.delete()
-        return HttpResponse(status=204)   
-        
-        
+        return HttpResponse(status=204)  
