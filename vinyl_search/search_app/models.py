@@ -8,12 +8,15 @@ class VinylQuery(models.Model):
     user = models.ForeignKey(User, related_name='searches')
     created = models.DateTimeField(auto_now=True)
     result_title = models.CharField(max_length=9000, null=True)
-    result_thumb = models.URLField(null=True)
-    #result_format = models.CharField(max_length=9000, null=True)
+    # result_url = models.URLField(null=True)
+    # result_thumb = models.URLField(null=True)
+    # result_format = models.CharField(max_length=9000, null=True)
 
     def __str__(self):
         result = self.imgur_url
-        # if statement so I can delete queries with no image in admin
+        '''
+        if statement so I can delete queries with no image in admin
+        '''
         if result is None:
             return ''
         else:

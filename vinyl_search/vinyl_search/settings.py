@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'imgurpython',
     'rest_framework',
     'search_app',
+    'easy_thumbnails',
 ]
 
 MIDDLEWARE = [
@@ -127,7 +128,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 print(MEDIA_ROOT)
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'enderst3@gmail.com'
 EMAIL_HOST_USER = 'enderst3'
 EMAIL_HOST_PASSWORD = ''

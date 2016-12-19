@@ -11,10 +11,15 @@
 
         <header>
             <h1>Vinyl Search</h1>
+            <a href='accounts/logout/' class='btn' id='log_out_label'>Log Out</a>
+            <a href='/' class='btn' id='home'>Home</a>
+            <a href='/user_history/' class='btn' id="history_label">User History</a>
+            <a href='/accounts/register/' class='btn' id='register'>Register</a>
+            <br><br>
         </header>
         <main>
             {% block content %}
-            
+
             {%  endblock content %}
         </main>
         <footer>
@@ -23,7 +28,7 @@
 
         </footer>
 
-        
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="/static/js/capstone.js"></script>

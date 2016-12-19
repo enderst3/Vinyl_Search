@@ -6,8 +6,13 @@
 
 {% for search in results %}
 
+    {{ search.created }}
+    <br>
     {{ search.result_title }}
-    <img src="{{search.query_image.url}}">
+    <br>
+    <img src="{{search.query_image.url}}" height="125">
+    
+    <br>
     <br>
 
 {% endfor %}

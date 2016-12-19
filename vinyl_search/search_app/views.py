@@ -26,13 +26,16 @@ from search_app.models import VinylQuery
 from search_app.serializers import VinylQuerySerializer
 from django.views.decorators.csrf import csrf_exempt
 
-
-# search code
+'''
+search code
+'''
 @login_required
 def app(request):
     album = None
     client = ImgurClient(client_id, client_secret)
-    # upload and save image to database
+    '''
+    upload and save image to database
+    '''
     if request.method == 'POST':
         upload = request.FILES['file']
         vq = VinylQuery.objects.create(user=request.user, query_image=upload)
@@ -75,8 +78,8 @@ def app(request):
 
         r = sm_results[0]
         vq.result_title = r['title']
-        # vq.result_thumb = r['format']
         vq.result_format = r['thumb']
+        vq.result_url = r['uri']
         vq.save()
 
     elif request.method == 'GET':
@@ -87,15 +90,17 @@ def app(request):
 
     return render(request, 'capstone.html', context)
 
-
-# user history
+'''
+user history
+'''
 def user_history(request):
     vq = VinylQuery.objects.filter(user=request.user)
     context = {'results': vq}
     return render(request, 'user_history.html', context)
 
-
-# contact and email info
+'''
+contact and email info
+'''
 def contact(request):
     form_class = ContactForm
 
@@ -114,16 +119,17 @@ def contact(request):
             content = template.render(context)
 
             email = EmailMessage("New contact form submission",
-                content,"Vinyl Search" +'',['enderst3@gmail.com'],
-                headers = {'Reply-To': contact_email})
+                content, "Vinyl Search" + '', ['enderst3@gmail.com'],
+                headers={'Reply-To': contact_email})
 
             email.send()
             return redirect('contact')
 
     return render(request, 'contact.html', {'form': form_class})
 
-
-# rest framework
+'''
+rest framework
+'''
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.
@@ -137,7 +143,7 @@ class JSONResponse(HttpResponse):
 @csrf_exempt
 def search_app_list(request):
     """
-    List all code snippets, or create a new snippet.
+    List data
     """
     if request.method == 'GET':
         vqs = VinylQuery.objects.all()
@@ -156,7 +162,7 @@ def search_app_list(request):
 @csrf_exempt
 def query_detail(request, pk):
     """
-    Retrieve, update or delete a code snippet.
+    Retrieve query data
     """
     try:
         query = VinylQuery.objects.get(pk=pk)
@@ -177,4 +183,4 @@ def query_detail(request, pk):
 
     elif request.method == 'DELETE':
         query.delete()
-        return HttpResponse(status=204)  
+        return HttpResponse(status=204)

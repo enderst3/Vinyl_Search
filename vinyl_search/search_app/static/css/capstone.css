@@ -27,6 +27,9 @@ header, main, footer {
     width: 80%;
     display: block;
     overflow: auto;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-align: center;
 }
 
@@ -70,7 +73,7 @@ a {
     padding-top: 15px;
 }
 
-#choose_label, #submit_label, #contact, #register_label, #login_label{
+#choose_label, #submit_label, #contact, #register_label, #login_label, #log_out_label, #history_label, #home, #register {
     padding: 5px;
     background-color: rgba(255, 255, 255, 0.1);
     border: 2px solid dodgerblue;
@@ -97,8 +100,28 @@ a {
     background-color: rgba(0, 0, 0, 0.2)
 }
 
-#login_label:hover {
+#login_label:hover, #log_out_label:hover, #history_label:hover, #home:hover, #register:hover {
     background-color: rgba(0, 0, 0, 0.2)
+}
+
+.btn {
+  width: 150px;
+  margin: 5px;
+}
+
+#history_label {
+  text-decoration: none;
+}
+
+#log_out_label {
+  text-decoration: none;
+}
+
+#register {
+  text-decoration: none;
+}
+#home {
+  text-decoration: none;
 }
 
 #contact_me {
@@ -108,7 +131,7 @@ a {
 p {
     font-size: 16px;
 }
- 
+
 #loading {
     font-size: 20px;
 }
@@ -119,9 +142,6 @@ p {
     display: block;
     overflow: auto;
     text-align: center;
-    white-space: wrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     font-family: monospace;
     font-size: 24px;
 }
