@@ -29,6 +29,8 @@ from django.views.decorators.csrf import csrf_exempt
 '''
 search code
 '''
+
+
 @login_required
 def app(request):
     album = None
@@ -93,6 +95,8 @@ def app(request):
 '''
 user history
 '''
+
+
 def user_history(request):
     vq = VinylQuery.objects.filter(user=request.user)
     context = {'results': vq}
@@ -101,6 +105,8 @@ def user_history(request):
 '''
 contact and email info
 '''
+
+
 def contact(request):
     form_class = ContactForm
 
@@ -127,9 +133,11 @@ def contact(request):
 
     return render(request, 'contact.html', {'form': form_class})
 
-'''
+"""
 rest framework
-'''
+"""
+
+
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.

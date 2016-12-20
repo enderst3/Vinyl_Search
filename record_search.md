@@ -17,10 +17,11 @@
 ### Data Model
 
     - Flexbox page layout.
-    - Add a drop box to import the image.(dropzone.js?)
+    - Add a way to upload an image
         - On the phone it will need to turn on the camera and save the photo.
-    - Automate a google image search
+    - Automate a google image search(using selenium)
     - parse the google search results to populate a search of Discogs
+    -Imgur API to create a url to search for.
     - Discogs API. to provide album info
     - Display album info and a link to go to the Discogs page for the album.
 
