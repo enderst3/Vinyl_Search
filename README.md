@@ -1,14 +1,14 @@
 # Vinyl Search
 
-![alt text](Todd/Desktop/homepagecrop.png)
-![alt text](Todd/Desktop/homepagecrop.png)
+![alt text](https://raw.githubusercontent.com/enderst3/mycapstone/beb0a29815ec7180b8fd6c4eed4e0c3f85517cac/images/homepagecrop.png)
+![alt text](https://raw.githubusercontent.com/enderst3/mycapstone/beb0a29815ec7180b8fd6c4eed4e0c3f85517cac/images/search%20resultscrop.png)
 This is a search app that will let you take a photo of an album cover, then it uses google to search(using the selenium webdriver) for the album info.  It returns results, you can click on the album cover to go to the corresponding Discogs page, where you can see the info, and maintain your album collection.
 
 ### Motivation
 
 I wrote this to help me keep track of the Albums I own, and to keep me from buying duplicates while I am at a record store.  Since the majority of albums do not have a barcode, I wanted a quick and easy way to search for them.
 
-The google image search api is deprecated, I had to use the Selenium webdriver.  It opens a web browser and manually fills in the google search, and clicks the buttons needed to automate the search.  It takes about 6 seconds to complete the search
+The google image search api is deprecated, I had to use the Selenium webdriver.  It opens a web browser and manually fills in the google search, and clicks the buttons needed to automate the search.  It takes about 10 seconds to complete the search.
 
 ### Prerequisites
 

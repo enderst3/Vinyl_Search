@@ -1,4 +1,1 @@
-{
-  "search_app/tests/test_views.py::TestView::()::test_anonymous": true,
-  "search_app/tests/test_views.py::TestView::()::test_superuser": true
-}
+{}
