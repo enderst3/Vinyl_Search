@@ -26,13 +26,12 @@ from search_app.models import VinylQuery
 from search_app.serializers import VinylQuerySerializer
 from django.views.decorators.csrf import csrf_exempt
 
-'''
-search code
-'''
-
 
 @login_required
 def app(request):
+    '''
+    search code
+    '''
     album = None
     client = ImgurClient(client_id, client_secret)
     '''
@@ -92,22 +91,20 @@ def app(request):
 
     return render(request, 'capstone.html', context)
 
-'''
-user history
-'''
-
 
 def user_history(request):
+    '''
+    user history
+    '''
     vq = VinylQuery.objects.filter(user=request.user)
     context = {'results': vq}
     return render(request, 'user_history.html', context)
 
-'''
-contact and email info
-'''
-
 
 def contact(request):
+    '''
+    contact and email info
+    '''
     form_class = ContactForm
 
     if request.method == 'POST':
@@ -133,13 +130,10 @@ def contact(request):
 
     return render(request, 'contact.html', {'form': form_class})
 
-"""
-rest framework
-"""
-
 
 class JSONResponse(HttpResponse):
     """
+    rest framework
     An HttpResponse that renders its content into JSON.
     """
     def __init__(self, data, **kwargs):

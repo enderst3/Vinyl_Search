@@ -1,7 +1,7 @@
 # Vinyl Search
 
 ![alt text](https://raw.githubusercontent.com/enderst3/mycapstone/beb0a29815ec7180b8fd6c4eed4e0c3f85517cac/images/homepagecrop.png)
-![alt text](https://github.com/enderst3/mycapstone/blob/master/images/search%20resultscrop.png?raw=true)
+![alt text](https://github.com/enderst3/mycapstone/blob/master/images/search%20resultscrop2.png?raw=true)
 This is a search app that will let you take a photo of an album cover, then it uses google to search(using the selenium webdriver) for the album info.  It returns results, you can click on the album cover to go to the corresponding Discogs page, where you can see the info, and maintain your album collection.
 
 ### Motivation
