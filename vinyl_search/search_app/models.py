@@ -8,7 +8,7 @@ class VinylQuery(models.Model):
     user = models.ForeignKey(User, related_name='searches')
     created = models.DateTimeField(auto_now=True)
     result_title = models.CharField(max_length=9000, null=True)
-    # result_url = models.URLField(null=True)
+    result_url = models.URLField(null=True)
     # result_thumb = models.URLField(null=True)
     # result_format = models.CharField(max_length=9000, null=True)
 

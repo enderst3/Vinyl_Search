@@ -1259,3 +1259,10 @@ JavaScript error: chrome://browser/content/places/browserPlacesViews.js, line 26
 [warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
 1482348220089	Marionette	INFO	Listening on port 65338
 [warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+1482784930717	geckodriver	INFO	Listening on 127.0.0.1:49840
+1482784931653	mozprofile::profile	INFO	Using profile path /var/folders/fy/hzydthbx6k53tvbyj_6y609w0000gn/T/rust_mozprofile.K6AyXxAk2lEN
+1482784931654	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1482784931695	geckodriver::marionette	INFO	Connecting to Marionette on localhost:49846
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+1482784932268	Marionette	INFO	Listening on port 49846
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
