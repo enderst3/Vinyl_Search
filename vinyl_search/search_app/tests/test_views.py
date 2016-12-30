@@ -8,7 +8,6 @@ pytestmark = pytest.mark.django_db
 
 class TestView:
 
-
     def app(self):
         req = RequestFactory().get('/')
         resp = views.app(req)
