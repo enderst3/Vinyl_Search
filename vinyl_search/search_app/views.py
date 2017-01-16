@@ -55,11 +55,11 @@ def app(request):
         image_url_field.send_keys(vq.imgur_url)
         # clicks submit
         image_url_field.submit()
-        # waits 1 second
+        # waits 2 seconds
         time.sleep(2)
         # finds search by image link, then clicks
         driver.find_element_by_xpath("//a[contains(., 'search by')]").click()
-        # waits 4 seconds
+        # waits 5 seconds
         time.sleep(5)
         # finds the best guess and copies the info
         best_guess = driver.find_element_by_class_name('_gUb').text
