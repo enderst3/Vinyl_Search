@@ -45,22 +45,30 @@ def app(request):
         vq.imgur_url = image.get('link', None)
         vq.save()
 
+
+        '''
+        need to search this base url
+        https://www.google.com/searchbyimage?&image_url=vq.imgur_url
+
+        Then open and google search the for the con
+
+        '''
         # selenium web driver, opens firefox
         driver = webdriver.Firefox()
         # goes to google
-        driver.get('https://images.google.com/')
+        driver.get('https://www.google.com/searchbyimage?&image_url='+vq.imgur_url)
         # finds the input field
-        image_url_field = driver.find_element_by_name('q')
+        #image_url_field = driver.find_element_by_name('q')
         # populates the image url
-        image_url_field.send_keys(vq.imgur_url)
+        #image_url_field.send_keys(vq.imgur_url)
         # clicks submit
-        image_url_field.submit()
+        #image_url_field.submit()
         # waits 2 seconds
-        time.sleep(2)
+        #time.sleep(5)
         # finds search by image link, then clicks
-        driver.find_element_by_xpath("//a[contains(., 'search by')]").click()
+        #driver.find_element_by_xpath("//a[contains(., 'searchby')]").click()
         # waits 5 seconds
-        time.sleep(5)
+        time.sleep(1)
         # finds the best guess and copies the info
         best_guess = driver.find_element_by_class_name('_gUb').text
         # discogs keys and api call
