@@ -1668,3 +1668,80 @@ See /usr/include/servers/bootstrap_defs.h for the error codes.
 1513417597444	Marionette	INFO	Listening on port 61441
 2017-12-16 01:46:37.811 plugin-container[11639:1775514] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9a37, name = 'com.apple.tsm.portname'
 See /usr/include/servers/bootstrap_defs.h for the error codes.
+1513418636750	geckodriver	INFO	Listening on 127.0.0.1:63532
+1513418636805	mozprofile::profile	INFO	Using profile path /var/folders/fy/hzydthbx6k53tvbyj_6y609w0000gn/T/rust_mozprofile.qUxzzJKdJ1aM
+1513418636808	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1513418636814	geckodriver::marionette	INFO	Connecting to Marionette on localhost:63536
+1513418638470	Marionette	INFO	Listening on port 63536
+2017-12-16 02:03:58.820 plugin-container[12118:1796313] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9a3b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1513418860498	geckodriver	INFO	Listening on 127.0.0.1:64090
+1513418860548	mozprofile::profile	INFO	Using profile path /var/folders/fy/hzydthbx6k53tvbyj_6y609w0000gn/T/rust_mozprofile.FyziTS9Fn20Z
+1513418860551	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1513418860560	geckodriver::marionette	INFO	Connecting to Marionette on localhost:64094
+1513418862241	Marionette	INFO	Listening on port 64094
+2017-12-16 02:07:42.572 plugin-container[12198:1805108] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x993b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1513418904916	geckodriver	INFO	Listening on 127.0.0.1:64220
+1513418904975	mozprofile::profile	INFO	Using profile path /var/folders/fy/hzydthbx6k53tvbyj_6y609w0000gn/T/rust_mozprofile.UPhE2NyEFZ0o
+1513418904978	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1513418904985	geckodriver::marionette	INFO	Connecting to Marionette on localhost:64224
+1513418906625	Marionette	INFO	Listening on port 64224
+2017-12-16 02:08:26.969 plugin-container[12235:1807006] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x993b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1513419298045	geckodriver	INFO	Listening on 127.0.0.1:65451
+1513419298098	mozprofile::profile	INFO	Using profile path /var/folders/fy/hzydthbx6k53tvbyj_6y609w0000gn/T/rust_mozprofile.wfzc0j1wF1Hk
+1513419298102	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1513419298108	geckodriver::marionette	INFO	Connecting to Marionette on localhost:65456
+1513419299735	Marionette	INFO	Listening on port 65456
+2017-12-16 02:15:00.109 plugin-container[12601:1821990] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x993b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1513419915574	geckodriver	INFO	Listening on 127.0.0.1:50535
+1513419915623	mozprofile::profile	INFO	Using profile path /var/folders/fy/hzydthbx6k53tvbyj_6y609w0000gn/T/rust_mozprofile.ausfRB6bJEKI
+1513419915626	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1513419915633	geckodriver::marionette	INFO	Connecting to Marionette on localhost:50539
+1513419917335	Marionette	INFO	Listening on port 50539
+2017-12-16 02:25:17.690 plugin-container[12725:1840775] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x993b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1513420024681	geckodriver	INFO	Listening on 127.0.0.1:50835
+1513420024733	mozprofile::profile	INFO	Using profile path /var/folders/fy/hzydthbx6k53tvbyj_6y609w0000gn/T/rust_mozprofile.T1SRJaCIQRbt
+1513420024736	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1513420024742	geckodriver::marionette	INFO	Connecting to Marionette on localhost:50841
+1513420026431	Marionette	INFO	Listening on port 50841
+2017-12-16 02:27:06.768 plugin-container[12744:1844915] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9a3b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1513420061662	geckodriver	INFO	Listening on 127.0.0.1:50975
+1513420061714	mozprofile::profile	INFO	Using profile path /var/folders/fy/hzydthbx6k53tvbyj_6y609w0000gn/T/rust_mozprofile.Kwriq6AUSj3B
+1513420061717	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1513420061724	geckodriver::marionette	INFO	Connecting to Marionette on localhost:50979
+1513420063344	Marionette	INFO	Listening on port 50979
+2017-12-16 02:27:43.682 plugin-container[12754:1846646] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9937, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1513420099347	geckodriver	INFO	Listening on 127.0.0.1:51107
+1513420099397	mozprofile::profile	INFO	Using profile path /var/folders/fy/hzydthbx6k53tvbyj_6y609w0000gn/T/rust_mozprofile.osVEsTCmtmmu
+1513420099400	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1513420099408	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51111
+1513420101106	Marionette	INFO	Listening on port 51111
+2017-12-16 02:28:21.453 plugin-container[12763:1848328] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x993b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1513420113844	geckodriver	INFO	Listening on 127.0.0.1:51168
+1513420113933	mozprofile::profile	INFO	Using profile path /var/folders/fy/hzydthbx6k53tvbyj_6y609w0000gn/T/rust_mozprofile.Hx4NcXe3msl4
+1513420113937	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1513420113944	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51174
+1513420115555	Marionette	INFO	Listening on port 51174
+2017-12-16 02:28:35.897 plugin-container[12768:1848930] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x993b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1513420147761	geckodriver	INFO	Listening on 127.0.0.1:51301
+1513420147814	mozprofile::profile	INFO	Using profile path /var/folders/fy/hzydthbx6k53tvbyj_6y609w0000gn/T/rust_mozprofile.ApVQXjI07Aon
+1513420147817	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1513420147824	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51305
+1513420149464	Marionette	INFO	Listening on port 51305
+2017-12-16 02:29:09.810 plugin-container[12777:1850413] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9a37, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1513420210088	geckodriver	INFO	Listening on 127.0.0.1:51506
+1513420210143	mozprofile::profile	INFO	Using profile path /var/folders/fy/hzydthbx6k53tvbyj_6y609w0000gn/T/rust_mozprofile.PpfLPCy2IT3e
+1513420210147	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1513420210154	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51510
+1513420211858	Marionette	INFO	Listening on port 51510
+2017-12-16 02:30:12.217 plugin-container[12790:1853250] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x993b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.

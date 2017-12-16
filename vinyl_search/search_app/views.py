@@ -50,7 +50,7 @@ def app(request):
         need to search this base url
         https://www.google.com/searchbyimage?&image_url=vq.imgur_url
 
-        Then open and google search the for the con
+        Then open and google search 
 
         '''
         # selenium web driver, opens firefox
@@ -68,7 +68,7 @@ def app(request):
         # finds search by image link, then clicks
         #driver.find_element_by_xpath("//a[contains(., 'searchby')]").click()
         # waits 5 seconds
-        time.sleep(1)
+        #time.sleep(1)
         # finds the best guess and copies the info
         best_guess = driver.find_element_by_class_name('_gUb').text
         # discogs keys and api call
