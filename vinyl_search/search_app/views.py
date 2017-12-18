@@ -14,7 +14,7 @@ from private.secrets import client_id, client_secret, discogs_key
 from imgurpython import ImgurClient
 from django.contrib.auth.decorators import login_required
 from search_app.forms import ContactForm
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMessage 
 from django.shortcuts import redirect
 from django.template import Context
 from django.template.loader import get_template
